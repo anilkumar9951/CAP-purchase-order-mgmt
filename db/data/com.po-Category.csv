@@ -1,0 +1,6 @@
+ID,name,parent_ID
+cat-001,Materials,
+cat-002,Raw Materials,cat-001
+cat-003,Finished Goods,cat-001
+cat-004,Steel,cat-002
+cat-005,Copper,cat-002

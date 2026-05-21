@@ -1,0 +1,48 @@
+{
+  "xsappname": "purchase-order-mgmt",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    { "name": "$XSAPPNAME.POViewer",  "description": "Read POs" },
+    { "name": "$XSAPPNAME.POManager", "description": "Create and manage POs" },
+    { "name": "$XSAPPNAME.POAdmin",   "description": "Approve, reject, and admin POs" }
+  ],
+  "role-templates": [
+    {
+      "name"       : "POViewer",
+      "description": "Can read purchase orders",
+      "scope-references": ["$XSAPPNAME.POViewer"]
+    },
+    {
+      "name"       : "POManager",
+      "description": "Can create and manage purchase orders",
+      "scope-references": ["$XSAPPNAME.POViewer", "$XSAPPNAME.POManager"]
+    },
+    {
+      "name"       : "POAdmin",
+      "description": "Full access including approve and reject",
+      "scope-references": [
+        "$XSAPPNAME.POViewer",
+        "$XSAPPNAME.POManager",
+        "$XSAPPNAME.POAdmin"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name"           : "PO Viewer",
+      "role-template-references": ["$XSAPPNAME.POViewer"]
+    },
+    {
+      "name"           : "PO Manager",
+      "role-template-references": ["$XSAPPNAME.POViewer", "$XSAPPNAME.POManager"]
+    },
+    {
+      "name"           : "PO Administrator",
+      "role-template-references": [
+        "$XSAPPNAME.POViewer",
+        "$XSAPPNAME.POManager",
+        "$XSAPPNAME.POAdmin"
+      ]
+    }
+  ]
+}

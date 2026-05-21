@@ -1,0 +1,32 @@
+
+{
+  "requires": {
+    "auth": {
+      "kind": "mocked",
+      "users": {
+        "viewer@test.com": {
+          "password": "viewer123",
+          "roles": ["POViewer"]
+        },
+        "manager@test.com": {
+          "password": "manager123",
+          "roles": ["POViewer", "POManager"]
+        },
+        "admin@test.com": {
+          "password": "admin123",
+          "roles": ["POViewer", "POManager", "POAdmin"]
+        }
+      }
+    },
+    "S4ProductService": {
+      "kind": "odata",
+      "model": "srv/external/S4ProductService"
+     
+    },
+    "SupplierValidationService": {
+      "kind": "odata",
+      "model": "srv/external/SupplierValidationService"
+      
+    }
+  }
+}

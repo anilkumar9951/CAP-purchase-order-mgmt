@@ -1,0 +1,19 @@
+
+[
+  {
+    "SupplierID"  : "s-001",
+    "RatingScore" : 8.5,
+    "RatingGrade" : "A",
+    "CreditLimit" : 5000000.00,
+    "IsBlacklisted": false,
+    "LastUpdated" : "2024-01-15"
+  },
+  {
+    "SupplierID"  : "s-002",
+    "RatingScore" : 6.2,
+    "RatingGrade" : "B",
+    "CreditLimit" : 1000000.00,
+    "IsBlacklisted": false,
+    "LastUpdated" : "2024-01-10"
+  }
+]

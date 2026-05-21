@@ -1,0 +1,28 @@
+
+
+[
+  {
+    "MaterialNumber": "MAT-001",
+    "Description": "Steel Rod Grade A",
+    "BaseUnit": "KG",
+    "StandardPrice": 450.00,
+    "MaterialGroup": "RAW-MAT",
+    "GrossWeight": 1.000
+  },
+  {
+    "MaterialNumber": "MAT-002",
+    "Description": "Copper Wire 2.5mm",
+    "BaseUnit": "MTR",
+    "StandardPrice": 320.00,
+    "MaterialGroup": "ELEC",
+    "GrossWeight": 0.025
+  },
+  {
+    "MaterialNumber": "MAT-003",
+    "Description": "Aluminium Sheet 3mm",
+    "BaseUnit": "SQM",
+    "StandardPrice": 780.00,
+    "MaterialGroup": "RAW-MAT",
+    "GrossWeight": 8.100
+  }
+]

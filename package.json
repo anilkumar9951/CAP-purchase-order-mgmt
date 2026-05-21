@@ -1,8 +1,10 @@
 {
   "name": "purchase-order-mgmt",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
   "dependencies": {
+    "@cap-js/hana": "^2.8.0",
+    "@sap-cloud-sdk/http-client": "^4.6.0",
+    "@sap-cloud-sdk/resilience": "^4.6.0",
     "@sap/cds": "^9",
     "express": "^4"
   },
@@ -12,5 +14,47 @@
   "scripts": {
     "start": "cds-serve"
   },
-  "private": true
+  "cds": {
+    "requires": {
+      "S4ProductService": {
+        "kind": "odata",
+        "model": "srv/external/S4ProductService"
+      },
+      "SupplierValidationService": {
+        "kind": "odata",
+        "model": "srv/external/SupplierValidationService"
+      },
+      "db": {
+        "kind": "sqlite",
+        "[production]": {
+          "kind": "hana"
+        }
+      }
+    },
+    "build": {
+      "target": "gen",
+      "tasks": [
+        {
+          "for": "hana",
+          "src": "db",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        },
+        {
+          "for": "nodejs",
+          "src": "srv",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        }
+      ]
+    }
+  }
 }
